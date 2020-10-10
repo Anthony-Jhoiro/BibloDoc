@@ -17,10 +17,12 @@ Confidentialité : ###
 L’idée du logiciel est née du besoin de plusieurs bibliothèques de numériser leur contenu. D’après la demande client, l’application  doit pouvoir centraliser les oeuvres de toutes bibliothèques, ainsi que de sécuriser les oeuvres sous licences (pas de vol physique) pour pouvoir mettre en commun la liste des oeuvres qu'ils possèdent.  
 
 ## description (solution) :
-Notre solution : un logiciel permettant de partager les oeuvres de l'association en fonction de son droit (domaine publique ou sous brevet) aux membres des différentes bibliothèques et aussi à ces membres de proposer différentes oeuvres pour enrichir la base d'oeuvres. Le logiciel prendre en compte les domaines des oeuvres (privé/public), la sécurité (chiffrage des oeuvres protégées), ainsi que la vérification des oeuvres proposées par les membres  
+Notre solution : un logiciel permettant de partager les oeuvres de l'association en fonction de son droit (domaine publique ou sous brevet) aux membres des différentes bibliothèques et aussi à ces membres de proposer différentes oeuvres pour enrichir la base d'oeuvres.  
+Le logiciel prendre en compte les domaines des oeuvres (privé/public), la sécurité (chiffrage des oeuvres protégées), ainsi que la vérification des oeuvres proposées par les membres  
 
 ## contexte : 
-Ce logiciel sert à centraliser la gestion des oeuvres de plusieurs bibliothèques, ce qui permet de faire des économies car il représente un seul service pour plusieurs bibliothèques. De plus, une nouvelle bibliothèque pourra se greffer au logiciel sans aucun problème.  
+Ce logiciel sert à centraliser la gestion des oeuvres de plusieurs bibliothèques, ce qui permet de faire des économies car il représente un seul service pour plusieurs bibliothèques.  
+De plus, une nouvelle bibliothèque pourra se greffer au logiciel sans aucun problème.  
 
 
 ## Glossaire
