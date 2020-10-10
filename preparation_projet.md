@@ -1,5 +1,6 @@
 # Biblo Doc'
 
+
 ![image](https://images.adagio.com/images2/custom_blends/117606.jpg)
 
 Date : 5 octobre 2020 
@@ -10,12 +11,15 @@ Nom du groupe : Golden Cookie Corp
 
 Confidentialité : ###
 
-## Besoin
 
 
-## Solution
+## objectifs  
+L’idée du logiciel est née du besoin d’une bibliothèque de numériser son contenu. D’après la demande client, l’application  doit pouvoir centraliser les oeuvres de la bibliothèque, ainsi que de sécuriser les oeuvres sous licences (pas de vol physique).
 
-## Contexte
+## description (solution) : 3 lignes
+Notre solution : un logiciel permettant de partager les oeuvres de l'association en fonction de son droit (domaine publique ou sous brevet). 
+
+## contexte : 3 lignes
 
 
 ## Glossaire
