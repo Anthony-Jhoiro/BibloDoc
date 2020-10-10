@@ -14,12 +14,13 @@ Confidentialité : ###
 
 
 ## objectifs  
-L’idée du logiciel est née du besoin d’une bibliothèque de numériser son contenu. D’après la demande client, l’application  doit pouvoir centraliser les oeuvres de la bibliothèque, ainsi que de sécuriser les oeuvres sous licences (pas de vol physique).
+L’idée du logiciel est née du besoin de plusieurs bibliothèques de numériser leur contenu. D’après la demande client, l’application  doit pouvoir centraliser les oeuvres de toutes bibliothèques, ainsi que de sécuriser les oeuvres sous licences (pas de vol physique) pour pouvoir mettre en commun la liste des oeuvres qu'ils possèdent.
 
-## description (solution) : 3 lignes
-Notre solution : un logiciel permettant de partager les oeuvres de l'association en fonction de son droit (domaine publique ou sous brevet). 
+## description (solution) :
+Notre solution : un logiciel permettant de partager les oeuvres de l'association en fonction de son droit (domaine publique ou sous brevet) aux membres des différentes bibliothèques et aussi à ces membres de proposer différentes oeuvres pour enrichir la base d'oeuvres. Le logiciel prendre en compte les domaines des oeuvres (privé/public), la sécurité (chiffrage des oeuvres protégées), ainsi que la vérification des oeuvres proposées par les membres
 
-## contexte : 3 lignes
+## contexte : 
+
 
 
 ## Glossaire
@@ -28,7 +29,7 @@ Notre solution : un logiciel permettant de partager les oeuvres de l'association
 - membre = prévoir une authentification et une gestion de compte
 - numériser = le membre fournis lui même les fichiers des œuvres
 - empreint = ???
-- location = paiement en ligne
+- location = paiement en ligne ?
 - œuvres de domaine public
     - Copies non chiffrés
     - Accessible pour tout le monde
@@ -89,3 +90,5 @@ Plus de détails sur les droits d'accessilité ?
 Pourquoi utiliser un fichier JSON et non pas une base de donnée ?
 Comment sont gérées les dates de validité ?
 Pourquoi les repertoires "fond_commun" et "séquestre" ne contiennent qu'une partie des œuvres ?
+Location : Si il y a des paiments comment sont ils gérés
+Qu'est-ce qu'une licence d'exploitation ?
