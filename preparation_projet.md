@@ -15,3 +15,10 @@ Confidentialité : ###
 
 ## objectifs  
 L’idée du logiciel est née du besoin d’une bibliothèque de numériser son contenu. D’après la demande client, l’application  doit pouvoir centraliser les oeuvres de la bibliothèque, ainsi que de sécuriser les oeuvres sous licences (pas de vol physique).
+
+## description (solution) : 3 lignes
+Notre solution : un logiciel permettant de partager les oeuvres de l'association en fonction de son droit (domaine publique ou sous brevet). 
+
+## contexte : 3 lignes
+
+## glossaire
