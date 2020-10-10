@@ -24,29 +24,32 @@ Notre solution : un logiciel permettant de partager les oeuvres de l'association
 
 ## Glossaire
 - bibliothèque numérique = application disponible au public (ex: site web)
-- gestion decentralisée 
+- gestion decentralisée = une application pour plusieurs bibliothèques
 - membre = prévoir une authentification et une gestion de compte
-    - chaque membre a une clef de chiffrement
-- numériser
-- empreint
+- numériser = le membre fournis lui même les fichiers des œuvres
+- empreint = ???
+- location = paiement en ligne
 - œuvres de domaine public
+    - Copies non chiffrés
+    - Accessible pour tout le monde
     - Il peut y avoir autant de copi que de membre
 - œuvres du domaine privé
     - maximum 3 fois plus de copies que de licence d'exploitation
+    - notions de droit d'accessibilité
     - chaque œuvre est chiffrée par une clef différente avec une date de validité
     - fin de validité = suppression automtique de la copie
-- œuvre = 1 fichier contenant l'œuvre et 1 fichier JSON
+- œuvre = 1 fichier contenant l'œuvre et 1 fichier JSON avec les détails
 - index des œouvre mis à jour en temps réel
-- 4 rubriques / répertoires
-    - fond commun
-    - emprunts = œuvres sous droit empruntées par un membre et chiffré avec sa clef
-    - séquestre = ??
+- 4 rubriques / répertoires ~= page web
+    - fond commun = tout ce qui est libre de droit
+    - emprunts = œuvres sous droit empruntées par le membre actif et chiffré avec sa clef
+    - séquestre = œuvres sous droit
     - à modérer = œuvres proposées par les membres et non validées
-- bibliothécaires
+- bibliothécaires = authentification et administration des comptes de bibliothécaires
     - controllent les œuvres dites "à modérer"
     - complètent des données :
-        - auteurs
-        - éditeurs
+        - auteurs = il peut y avoir plusieurs auteurs
+        - éditeurs = il peut y avoir plusieurs éditeurs
         - langue
         - pays d'origine
         - date de publication
@@ -79,10 +82,10 @@ formats et catégories :
         - Série
         - Documentaire
         - ...
-
-
-
-
     
 ## Questions
-Œuvres privées : une clef de chiffrement par œuvre ou par copie ?
+Œuvres privées : une clef de chiffrement par œuvre, par copie ou pas user ?  
+Plus de détails sur les droits d'accessilité ?
+Pourquoi utiliser un fichier JSON et non pas une base de donnée ?
+Comment sont gérées les dates de validité ?
+Pourquoi les repertoires "fond_commun" et "séquestre" ne contiennent qu'une partie des œuvres ?
