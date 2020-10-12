@@ -1,0 +1,58 @@
+@startuml Diagramme de Classe
+class User {
+    authorizations : ???
+    artworks : Artworks[]
+}
+
+interface Account {
+    id : Integer
+    login : String
+    password : String
+}
+
+class Admin {
+    library : Library
+}
+
+class Library {
+    id : Integer
+}
+
+class Artwork {
+    id : Integer
+    origin : Membre
+    _title : String
+    authors : String[]
+    language : String
+    origin_country : String
+    publication_date : Date
+    rights
+    categories : String[]
+    format : String
+    status : String
+    add_at : Date
+    modify_at : Date
+    last_modification : Date
+}
+
+class Copy {
+    artwork : Artwork
+    user : Account
+    creation_date : Date
+    limit_date : Date
+    key : String
+}
+
+
+Artwork -- User : User submit Artwork
+Artwork *-- Admin : Admin validate Artwork
+Library -- Admin : Admin work in a library
+Account <|-- Admin
+Account <|-- User
+Copy *-- User : 1
+Copy *-- Artwork : 1
+Library *-- Artwork : *
+
+@enduml
+
+
