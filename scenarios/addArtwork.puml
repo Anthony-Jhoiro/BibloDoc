@@ -21,7 +21,7 @@ alt Authentication check
                 controller -> db : Give artwork data and status as "à modérer"
                 db -[#green]> controller : Saved data
                 controller -[#green]> Front : Data has been Saved
-            else
+            else Fail to save data
                 db -[#red]> controller : Error saving data
                 controller -[#red]> Front : Error saving Artwork data
             end
