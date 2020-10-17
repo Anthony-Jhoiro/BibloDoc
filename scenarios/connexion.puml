@@ -16,3 +16,4 @@ group authentification
             controller -[#red]-> interface : give error : auth failed
     deactivate interface
 end
+@enduml
