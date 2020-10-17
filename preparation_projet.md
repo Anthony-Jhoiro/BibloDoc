@@ -35,7 +35,7 @@ De plus, une nouvelle bibliothèque pourra se greffer au logiciel sans aucun pro
 - œuvres de domaine public
     - Copies non chiffrés
     - Accessible pour tout le monde
-    - Il peut y avoir autant de copi que de membre
+    - Il peut y avoir autant de copie que de membre
 - œuvres du domaine privé
     - maximum 3 fois plus de copies que de licence d'exploitation
     - notions de droit d'accessibilité
