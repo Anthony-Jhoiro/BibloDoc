@@ -8,6 +8,8 @@ interface Account {
     id : Integer
     login : String
     password : String
+
+    resetPassword()
 }
 
 class Admin {
@@ -16,6 +18,8 @@ class Admin {
 
 class Library {
     id : Integer
+
+    addArtwork()
 }
 
 class Artwork {
@@ -33,6 +37,7 @@ class Artwork {
     add_at : Date
     modify_at : Date
     last_modification : Date
+    createCopy()
 }
 
 class Copy {
@@ -41,6 +46,7 @@ class Copy {
     creation_date : Date
     limit_date : Date
     key : String
+    checkValidity()
 }
 
 
