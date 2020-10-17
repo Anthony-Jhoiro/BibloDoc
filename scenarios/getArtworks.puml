@@ -1,21 +1,21 @@
 @startuml Add Artwork
 actor user
 boundary interface
-control controller
+control backend
 database db
 
 group freeArtwork
     user -> interface : goes to artworks' list's page
-        interface -> controller : get all artworks Request
-            controller -> db : get list of artwork
-            db -[#green]-> controller : give all the artworks
-        controller -[#green]-> interface : forward artworks data
+        interface -> backend : get all artworks Request
+            backend -> db : get list of artwork
+            db -[#green]-> backend : give all the artworks
+        backend -[#green]-> interface : forward artworks data
     interface -[#green]-> user : display artworks list
     user -> interface : click on an artwork
-        interface -> controller : get one artwork request
-            controller -> db : get one artwork info request
-            db -[#green]-> controller : give artwork infos
-        controller -[#green]-> interface : forward artwork infos
+        interface -> backend : get one artwork request
+            backend -> db : get one artwork info request
+            db -[#green]-> backend : give artwork infos
+        backend -[#green]-> interface : forward artwork infos
     interface -[#green]-> user : display the artwork infos
 end
 @enduml
