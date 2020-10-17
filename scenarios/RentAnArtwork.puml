@@ -1,0 +1,28 @@
+@startuml Add Artwork
+actor paysite
+actor user
+boundary interface
+control backend
+database db
+
+group freeArtwork
+    user -> interface : goes to rent artworks' list's page
+        interface -> backend : get all rent artworks Request
+            backend -> db : get list of rent artwork
+            db -[#green]-> backend : give all the rent artworks
+        backend -[#green]-> interface : forward rent artworks data
+    interface -[#green]-> user : display artworks list
+    user -> interface : click on an artwork
+        interface -> paysite : payment request
+            alt valid card data
+            paysite -[#green]> backend : send success payement
+                backend -[#green]> db : get one artwork info request
+                db -[#green]-> backend : give artwork infos
+            backend -[#green]-> interface : forward artwork infos
+        interface -[#green]-> user : display the artwork infos
+            else invalid card data
+            paysite -[#red]> backend : send error payment
+            backend -[#red]-> interface : send error payment
+        interface -[#red]-> user : display error
+end
+@enduml
