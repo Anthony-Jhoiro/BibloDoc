@@ -1,0 +1,43 @@
+@startuml Add Artwork
+actor user
+boundary Front
+box "Back End" #LightBlue
+control controller
+database db
+database storage
+end box
+
+== Add Artwork  ==
+user -> Front : fill new Artwork form
+Front -> controller : send Artwork Data
+
+alt Authentication check
+    alt Data validity check
+        alt Save files in storage system
+            controller -> storage : save files
+            storage -[#green]> controller : give files informations
+
+            alt Save data in the database
+                controller -> db : Give artwork data and status as "à modérer"
+                db -[#green]> controller : Saved data
+                controller -[#green]> Front : Data has been Saved
+            else
+                db -[#red]> controller : Error saving data
+                controller -[#red]> Front : Error saving Artwork data
+            end
+        else Fail to save the files
+            storage -[#red]> controller : fail to save files
+            controller -[#red]> Front : Error saving the files
+        end        
+
+    else Data is not valid
+        controller -[#red]> Front : Data is not valid
+    end
+
+else authentication failed
+    controller -[#red]> Front : User is not identified
+end
+
+
+
+@enduml
