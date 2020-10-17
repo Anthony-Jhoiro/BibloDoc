@@ -1,0 +1,32 @@
+@startuml Add Artwork
+actor user as u
+boundary frontend as f
+control backend as b
+database db
+
+group Create Account
+    u -> f : Fill sign-in form
+    f -> b : Submit sign-in form
+
+    alt User is admin
+        alt Form is valid
+            b -> db : check accounts with the same credentials
+            b <- db : get corresponding account if exist
+            alt check credentials do not exists
+                b -> db : Send data to create the account
+                alt Account succesfully created
+                    b <[#green]- db : Data succesfully inserting
+                    f <[#green]- b : The account has been created
+                else Failure when creating the account
+                    b <[#red]- db : Error inserting the data
+                    f <[#red]- b : Error creating the account
+                end
+            else credentials already exists
+                f <[#red]- b : Username or email already taken       
+            end
+        else form is invalid
+            f <[#red]- b : form is invalid
+        end
+        f <[#red]- b : Access denied
+    end
+@enduml
