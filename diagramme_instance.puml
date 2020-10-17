@@ -24,7 +24,7 @@ class Library {
 
 class Artwork {
     id : Integer
-    data: id
+    storageId: string
     origin : Membre
     _title : String
     authors : String[]
