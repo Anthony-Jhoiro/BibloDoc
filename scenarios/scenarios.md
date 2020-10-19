@@ -2,7 +2,7 @@
 
 ## Contexte
 
-Dans le cadre du développement de le logiciel BibloDoc, nous avons imaginé plusieurs scénarios pour nous guider dans la façon de concevoir le logiciel. Ici seront présents les scénarios les plus importants, classés par ordre d'occurences (le premier sera sûrement celui que l'on verra le plus, etc...)
+Dans le cadre du développement de le logiciel BibloDoc, nous avons imaginé plusieurs scénarios pour nous guider dans la façon de concevoir le logiciel. Ici seront présents les scénarios imaginés, classés par ordre d'importance (le premier sera sûrement celui que l'on verra le plus, etc...)
 
 ## Scénarios
 
@@ -21,7 +21,7 @@ Si les coordonnées ne sont pas bonnes (la base de données de trouve aucun comp
 (cf. diagramme de séquence partie get free artwork)
 
 **Description :**
-Ce scénario dépeint l'histoire de Jean-Michel, retraité passioné des romans de Jules Verne, et qui souhaite lire le tour du monde en 80 jours pour la 32ème fois. Se déplçant en fauteuil roulant motorisé, il est très difficile pour lui de se rendre à la bibliothèque pour lire ce livre. Il est donc heureux d'y avoir accès depuis son ordinateur Packard Bell.
+Ce scénario dépeint l'histoire de Jean-Michel, retraité passioné des romans de Jules Verne, et qui souhaite lire le tour du monde en 80 jours pour la 32ème fois. Se déplaçant en fauteuil roulant motorisé, il est très difficile pour lui de se rendre à la bibliothèque pour lire ce livre. Il est donc heureux d'y avoir accès depuis son ordinateur Packard Bell.
 
 **Acteurs :**
 Jean-Michel : 90 ans, ancien bouilleur de cru dans la ville d'Orchie, passionné de romans et plus particulièrement de Jules Verne.
