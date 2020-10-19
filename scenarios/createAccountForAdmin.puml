@@ -1,4 +1,4 @@
-@startuml Add Artwork
+@startuml Create Account For Admin
 actor user as u
 boundary frontend as f
 control backend as b

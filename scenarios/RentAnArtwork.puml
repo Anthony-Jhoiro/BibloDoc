@@ -1,4 +1,4 @@
-@startuml Add Artwork
+@startuml Rent an atrwork
 actor paysite
 actor user
 boundary interface

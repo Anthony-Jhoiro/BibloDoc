@@ -1,4 +1,4 @@
-@startuml Add Artwork
+@startuml Create Account for User
 actor user
 boundary frontend
 control backend
