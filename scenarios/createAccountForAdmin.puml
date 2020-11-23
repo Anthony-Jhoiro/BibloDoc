@@ -1,4 +1,4 @@
-@startuml Create Account For Admin
+@startuml Create_Account_For_Admin
 actor user as u
 boundary frontend as f
 control backend as b

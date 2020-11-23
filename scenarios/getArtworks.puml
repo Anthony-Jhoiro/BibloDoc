@@ -1,4 +1,4 @@
-@startuml Get Artoworks
+@startuml Get_Artworks
 actor user
 boundary interface
 control backend

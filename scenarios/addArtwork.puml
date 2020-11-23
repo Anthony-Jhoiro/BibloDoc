@@ -1,4 +1,4 @@
-@startuml Add Artwork
+@startuml Add_Artwork
 actor user
 boundary Front
 box "Back End" #LightBlue

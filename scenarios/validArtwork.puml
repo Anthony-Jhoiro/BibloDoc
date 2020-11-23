@@ -1,4 +1,4 @@
-@startuml Valid an Artwork
+@startuml Valid_an_Artwork
 actor user
 boundary Front
 box "Back End" #LightBlue

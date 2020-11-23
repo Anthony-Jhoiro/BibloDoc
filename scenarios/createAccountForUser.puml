@@ -1,4 +1,4 @@
-@startuml Create Account for User
+@startuml Create_Account_for_User
 actor user
 boundary frontend
 control backend

@@ -1,0 +1,56 @@
+@startuml
+
+skinparam ArrowColor #0077ff
+
+actor User
+entity Formulaire
+control Client
+database Serveur
+actor Bibliothecaire
+
+== Remplire le formulaire ==
+alt utilisateur connecté
+    User -> Client : demande formulaire
+    Client -> Formulaire : createFileShareForm()
+    activate Formulaire
+    Client -> User : sendFileShareForm()
+    User -> Formulaire : fill
+    User -> Formulaire : join file
+    User -> Client : submit form
+    destroy Formulaire
+
+    == Validation des données ==
+
+    Client -> User : askConfirm()
+    User -> Client : confirm
+    alt données valides coté client
+        Client -> Client : validFileFormData()
+        Client -> Serveur : sendFileFormData()
+        alt données valides coté serveur
+            Serveur -> Serveur : validFileFormData()
+
+
+            == Sauvegarde des données ==
+
+            Serveur -> Serveur : saveData()
+            alt Sauvegarde des données ok            
+                Serveur -> Client : confirmSavedData()
+                Serveur -> Serveur : AddLabelToModify()
+                Client -> Bibliothecaire : NotifyNewFile()
+                Client -> User : showSuccessMessage()
+            else Error : fail saving the files
+                Serveur -[#red]> Client : ERROR : sendError()
+                Client -[#red]> User : ERROR : showErrorMessage()
+            end
+        else Error : invalid form
+            Serveur -[#red]> Client : ERROR : sendInvalidForm()
+            Client -[#red]> User : ERROR : showErrorMessage()
+        end
+    else Error : invalid form
+        Client -[#red]> User : ERROR : showErrorMessage()
+    end
+else Error : Client disconected
+    Client -[#red]> User : ERROR : showErrorMessage()
+end
+
+@enduml

@@ -1,4 +1,4 @@
-@startuml connexion
+@startuml Connexion
 actor user
 boundary interface
 control controller
