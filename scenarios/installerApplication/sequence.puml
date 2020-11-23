@@ -1,0 +1,17 @@
+@startuml installerApplicationSequence
+
+actor user as u
+boundary "interface d'achat\n(navigateur/marketplace)" as ia
+database serveur as s
+
+
+u -> ia : ouverture de l'interface
+activate ia
+u -> ia : saisie du nom de l'application
+ia --> u : affichage des informations de l'application
+u -> ia : demande le telechargement
+ia -> s : demande le telechargement
+deactivate ia
+s --> u : installe l'application
+
+@enduml
