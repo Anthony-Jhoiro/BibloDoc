@@ -1,4 +1,4 @@
-@startuml installerApplicationSequence
+@startuml sequence
 
 actor user as u
 boundary "interface d'achat\n(navigateur/marketplace)" as ia

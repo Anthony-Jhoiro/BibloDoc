@@ -1,0 +1,27 @@
+@startuml class
+
+class User {
+    Int connexion(String identifiant, String mot_passe)
+}
+class Bibliothéquaire {
+    Bool modererOeuvre(Oeuvre oeuvre)
+}
+class Application {
+    Bool connexionServeurBN()
+    Bool ajouterOeuvre(Oeuvre oeuvre_a_ajouter)
+}
+class ServeurBibliothèqueNationale
+class Oeuvre {
+    Int id
+    String titre
+    Createur createur
+    Date date_parution
+    ...
+}
+
+Bibliothéquaire --|> User
+User -- Application : se connecter >
+Bibliothéquaire -- Application : moderer une oeuvre >
+Application -- ServeurBibliothèqueNationale : ajouter une oeuvre >
+
+@enduml

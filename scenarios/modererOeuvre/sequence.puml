@@ -1,0 +1,31 @@
+@startuml sequence
+
+actor bibliothecaire as b
+boundary application as a
+database "base de données\n<font color=#FFD700>**bibliothèque nationale**</font>" as bn
+
+b -> a : connexion
+a --> b : affiches les oeuvres soumises
+b -> a : filtre les oeuvres
+a --> b : affiche les résultats filtrés
+b -> a : trie les résultats
+a --> b : affiches les résultats triés
+b -> a : sélectionne une oeuvre
+a --> b : affiche les informations de l'oeuvre
+a --> b : affiche le lecteur de l'oeuvre\n(texte si livre, audio si musique...)
+b -> b : parcourt l'oeuvre
+b -> a : complète les informations de l'oeuvre
+b -> a : accepte l'oeuvre
+== le reste n'a pas été écrit, le scénario est donc spéculé ==
+a -> bn : recherche de l'oeuvre ajouté
+group présence à la bibliothèque nationale
+alt oeuvre présente à la bibliothèque nationale
+    bn --> a : réponse que l'oeuvre est présente
+else oeuvre non présente
+    bn --> a : réponse que l'oeuvre n'est pas présente
+    a -> bn : rajoute l'oeuvre
+end
+a --> b : notifie de l'ajout de l'oeuvre
+
+
+@enduml
