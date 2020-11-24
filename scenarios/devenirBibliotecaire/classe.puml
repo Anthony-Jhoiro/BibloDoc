@@ -1,0 +1,29 @@
+@startuml classe
+
+class User {
+    Int id
+    String nom
+    String prenom
+    ...
+}
+class Membre {
+    Bool soumettreBibliothecaire()
+}
+class Bibliothecaire {
+    Void choisir(Int choix)
+}
+class Application {
+    Void soumettreDemande(Membre )
+    Void transmettreChoix(Int choix)
+    Void transmettreResultatFinal(Int choix)
+}
+
+Bibliothecaire --|> User
+Membre --|> User
+
+Membre -- Application : soummet une demande de devenir bibliothecaire >
+Application -- Bibliothecaire : soummet demande aux bibliothecaires >
+Application -- Bibliothecaire : renvoie le choix <
+Membre -- Application : notifie du choix majoritaire <
+
+@enduml
