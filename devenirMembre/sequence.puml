@@ -1,0 +1,37 @@
+@startuml
+
+actor User
+entity FranceConnect
+box "Application" #LightBlue
+    entity Client
+    control Server
+end box
+database Db
+
+User -> Client : Lance l'application
+Client -> Client : Première utilisation
+Client --> User : Afficher page information (avec la demande d'authentification)
+alt "Choix FranceConnect"
+    User -> Client : Choisis connexion par FranceConnect
+    Client --> User : Redirige vers FranceConnect
+    Client --> FranceConnect : s'authentifie
+    FranceConnect --> Client : Envoie des informations d'authentification
+    Client --> Server : Envoie des informations de connexion
+    Server --> Db : Sauvegarde des informations de connexion
+    Db --> Server : Informations bien enregistrées
+    Server --> Client : Confirmation de la creation du compte
+    Client --> User : Confirmation de la création du compte et affichage des actions, dont celle de dépôt
+else "Choix Créer un nouvel identifiant"
+    User -> Client : Choisis de créer un nouvel identifiant
+    Client --> User : Envoie du formulaire de crétation de compte
+    User -> Client : Soumet le formulaire
+    Client -> Server : Envoie des informations
+    Server --> Server: Création d'un identifiant unique anonyme et d'une paire de clés publique et privée
+    Server -> Db : Sauvegarde des informations
+    Db --> Server : Confirme
+    Server --> Client : Envoie les œuvres publiques
+    Client --> User : Affiche la liste des œuveres publiques
+
+end
+
+@enduml

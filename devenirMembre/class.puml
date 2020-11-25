@@ -1,0 +1,30 @@
+@startuml
+
+package Application <<Rectangle>> {
+    class Client {
+        estPremiereAuthentification()
+        afficherPageInformation()
+        afficherFormulaireAuthentification()
+    }
+
+    class Server {
+        genererIdentifiantUnique()
+        genererClefs()
+    }
+}
+
+class FranceConnect {
+    authentifierUtilisateur()
+    transmettreInfosConnexion()
+}
+
+class User {
+    choisirSiteAuthentification()
+    remplirFormulaireAuthentification()
+}
+
+class Bdd {}
+
+Server -- Bdd : Enregistre >
+
+@enduml
