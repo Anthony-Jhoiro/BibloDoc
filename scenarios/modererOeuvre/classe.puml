@@ -1,9 +1,9 @@
 @startuml class
 
 class User {
-    Int connexion(String identifiant, String mot_passe)
+    static User connexion(String identifiant, String mot_passe)
 }
-class Bibliothéquaire {
+class Bibliothécaire {
     Bool modererOeuvre(Oeuvre oeuvre)
 }
 class Application {
@@ -19,9 +19,9 @@ class Oeuvre {
     ...
 }
 
-Bibliothéquaire --|> User
+Bibliothécaire --|> User
 User -- Application : se connecter >
-Bibliothéquaire -- Application : moderer une oeuvre >
+Bibliothécaire -- Application : moderer une oeuvre >
 Application -- ServeurBibliothèqueNationale : ajouter une oeuvre >
 
 @enduml

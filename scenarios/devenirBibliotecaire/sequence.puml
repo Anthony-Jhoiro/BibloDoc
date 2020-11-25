@@ -1,0 +1,29 @@
+@startuml Create_Account_For_Admin
+
+actor membre as m
+boundary "application du membre" as am
+boundary "applications des bibliothécaires" as ab
+actor bibliothécaires as b
+
+m -> am : demande le statut de bibliothécaire
+am -> am : enregistre la demande de statut
+am -> ab : soumet la demande
+ab -> b : demande le choix parmis :\n<font color=green>accepte</font>\n<font color=red>refuse</font>\n<font color=gray>n'a pas d'avis</font>\n<font color=#DFB700>ignore</font>
+b --> ab : indique son choix
+ab --> ab : partage le choix avec les autres applications
+ab \\- b : peut modifier son choix dans la limite du temps imparti
+ab --> ab : lorsque le temps est passé : partage les résultats finaux
+group décision bibliothécaires
+alt majorité approuve
+    ab --> am : transmet le résultat d'approbation
+    am --> am : enregistre le nouveau statut et modifie les droits
+    am --> m : notifie du changement de statut
+else minorité approuve
+    ab --> am : transmet le résultat de réprobation
+    am --> m : notifie de l'échec de la demande
+end
+
+
+
+
+@enduml
