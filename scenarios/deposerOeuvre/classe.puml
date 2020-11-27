@@ -1,0 +1,20 @@
+@startuml classe
+
+class User {
+    Void afficherDeposerOeuvreForm()
+}
+class Bibliothecaire
+class Application {
+    Bool sauvegarderOeuvre(Oeuvre aSauver)
+}
+class Formulaire
+class FormulaireDepot
+
+Bibliothecaire --|> User
+FormulaireDepot --|> Formulaire
+Application "1" *-- "*" Formulaire
+User -- FormulaireDepot : Remplir informations et joindre oeuvre >
+FormulaireDepot -- Application : Transmet les informations >
+Application -- Bibliothecaire : Notifie de la nouvelle oeuvre à modérer >
+
+@enduml

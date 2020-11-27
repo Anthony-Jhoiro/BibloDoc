@@ -1,0 +1,58 @@
+@startuml
+
+skinparam ArrowColor #0077ff
+
+actor User
+entity Formulaire
+box "application" #LightBlue
+control Client
+database Serveur
+end box
+actor Bibliothecaire
+
+== Remplire le formulaire ==
+alt utilisateur connecté
+    User -> Client : demande formulaire
+    Client -> Formulaire :  crée un formulaire
+    activate Formulaire
+    Client --> User : affiche le formulaire
+    User -> Formulaire : remplis
+    User -> Formulaire : joint le fichier
+    User -> Client : envoie le formulaire
+    destroy Formulaire
+
+    == Validation des données ==
+
+    Client --> User : demande la confirmation
+    User -> Client : confirme
+    alt données valides coté client
+        Client -> Client : valide les informations
+        Client -> Serveur : envoie les informations
+        alt données valides coté serveur
+            Serveur -> Serveur : valide les informations
+
+
+            == Sauvegarde des données ==
+
+            Serveur -> Serveur : enregistre dans "à modérer" et enregistre le n° de transaction dans le fichier journal local
+            alt Sauvegarde des données ok            
+                Serveur --> Client : confirme l'enregistrement des données
+                Serveur -> Serveur : AddLabelToModify()
+                Client -> Bibliothecaire : notifie le bibliothécaire qu'une nouvelle oeuvre est à modérer
+                Client --> User : Notifie que son oeuvre est en attente de modération
+            else Error : fail saving the files
+                Serveur -[#red]-> Client : ERROR : sendError()
+                Client -[#red]-> User : ERROR : showErrorMessage()
+            end
+        else Error : invalid form
+            Serveur -[#red]-> Client : ERROR : sendInvalidForm()
+            Client -[#red]-> User : ERROR : showErrorMessage()
+        end
+    else Error : invalid form
+        Client -[#red]-> User : ERROR : showErrorMessage()
+    end
+else Error : Client disconected
+    Client -[#red]-> User : ERROR : showErrorMessage()
+end
+
+@enduml

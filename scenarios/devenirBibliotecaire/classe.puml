@@ -13,7 +13,7 @@ class Bibliothecaire {
     Void choisir(Int choix)
 }
 class Application {
-    Void soumettreDemande(Membre )
+    Void soumettreDemande(Membre demandeur)
     Void transmettreChoix(Int choix)
     Void transmettreResultatFinal(Int choix)
 }
